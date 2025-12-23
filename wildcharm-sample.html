@@ -62,30 +62,6 @@
         color: #2b2b2b;
       }
 
-      .actions {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 12px;
-        margin-top: 10px;
-      }
-
-      .actions button {
-        border: 1px solid #1f1f1f;
-        background: var(--paper);
-        padding: 10px 18px;
-        border-radius: 999px;
-        font-size: 0.95rem;
-        font-family: "Iowan Old Style", "Palatino", "Bookman", serif;
-        cursor: pointer;
-        box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
-        transition: transform 150ms ease, box-shadow 150ms ease;
-      }
-
-      .actions button:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
-      }
-
       main {
         padding: 24px 8vw 72px;
         display: grid;
@@ -172,6 +148,43 @@
 
       .accent-strip span { display: block; }
 
+      .code-preview {
+        background: rgba(255, 255, 255, 0.7);
+        border-radius: 18px;
+        padding: 20px 22px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
+      }
+
+      .code-preview h2 {
+        margin: 0 0 10px;
+        font-size: 1.1rem;
+        letter-spacing: 0.02em;
+      }
+
+      .code-preview pre {
+        margin: 0;
+        padding: 16px;
+        border-radius: 12px;
+        background: #111010;
+        color: #f7f4eb;
+        overflow-x: auto;
+        box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+      }
+
+      .code-preview code {
+        font-family: "Courier New", "Courier", monospace;
+        font-size: 0.85rem;
+        line-height: 1.5;
+        display: block;
+      }
+
+      .code-preview .token-name { color: var(--bright-cyan); }
+      .code-preview .token-value { color: var(--bright-yellow); }
+      .code-preview .token-hex { color: var(--bright-green); }
+      .code-preview .token-rgba { color: var(--bright-magenta); }
+      .code-preview .token-block { color: var(--bright-blue); }
+
       @keyframes drop-in {
         from { opacity: 0; transform: translateY(-18px); }
         to { opacity: 1; transform: translateY(0); }
@@ -196,11 +209,6 @@
         A focused palette built for terminal readability and expressive contrast.
         Each swatch below corresponds to a Wildcharm ANSI slot.
       </p>
-      <div class="actions">
-        <button type="button">Import Profile</button>
-        <button type="button">Preview in Terminal</button>
-        <button type="button">View HEX Set</button>
-      </div>
     </header>
 
     <main>
@@ -306,26 +314,30 @@
         </div>
       </section>
 
-      <section class="terminal">
-        <div class="row">
-          <span class="label">user@wildcharm</span>
-          <span class="label">~</span>
-          <span class="label">$</span>
-          <span style="color: var(--bright-green)">git status</span>
-        </div>
-        <div class="row" style="color: var(--bright-white)">
-          On branch <span style="color: var(--bright-blue)">master</span>
-          <span class="tag">clean</span>
-        </div>
-        <div class="row" style="color: var(--bright-yellow)">
-          staged: sample.html
-        </div>
-        <div class="row" style="color: var(--bright-magenta)">
-          hint: keep it vivid, keep it readable.
-        </div>
-        <div class="row" style="color: var(--bright-cyan)">
-          palette: 16-color ANSI tuned to Wildcharm
-        </div>
+      <section class="code-preview">
+        <h2>CSS Palette</h2>
+        <pre><code><span class="token-block">:root</span> {
+  <span class="token-name">--black</span>: <span class="token-hex">#000000</span>;
+  <span class="token-name">--red</span>: <span class="token-hex">#bf1900</span>;
+  <span class="token-name">--green</span>: <span class="token-hex">#009500</span>;
+  <span class="token-name">--yellow</span>: <span class="token-hex">#be7300</span>;
+  <span class="token-name">--blue</span>: <span class="token-hex">#0075bd</span>;
+  <span class="token-name">--magenta</span>: <span class="token-hex">#9b2399</span>;
+  <span class="token-name">--cyan</span>: <span class="token-hex">#009899</span>;
+  <span class="token-name">--white</span>: <span class="token-hex">#9c9c9c</span>;
+  <span class="token-name">--bright-black</span>: <span class="token-hex">#929292</span>;
+  <span class="token-name">--bright-red</span>: <span class="token-hex">#e12000</span>;
+  <span class="token-name">--bright-green</span>: <span class="token-hex">#6fba72</span>;
+  <span class="token-name">--bright-yellow</span>: <span class="token-hex">#e09800</span>;
+  <span class="token-name">--bright-blue</span>: <span class="token-hex">#009bdf</span>;
+  <span class="token-name">--bright-magenta</span>: <span class="token-hex">#bf2dbd</span>;
+  <span class="token-name">--bright-cyan</span>: <span class="token-hex">#00bbbd</span>;
+  <span class="token-name">--bright-white</span>: <span class="token-hex">#ffffff</span>;
+  <span class="token-name">--ink</span>: <span class="token-hex">#101010</span>;
+  <span class="token-name">--paper</span>: <span class="token-hex">#f5f1e6</span>;
+  <span class="token-name">--glow</span>: <span class="token-rgba">rgba(0, 215, 215, 0.25)</span>;
+  <span class="token-name">--shadow</span>: <span class="token-rgba">rgba(0, 0, 0, 0.25)</span>;
+}</code></pre>
       </section>
     </main>
   </body>
