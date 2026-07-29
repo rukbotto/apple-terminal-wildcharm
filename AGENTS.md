@@ -25,6 +25,7 @@ There are no automated tests. For manual verification:
     - Commit message should summarize the changes made to staged files.
     - Add three bullet points to give more context about the commit.
     - Keep each commit small and focused.
+- Avoid creating feature branches for this repo. Commit directly to `master` branch.
 
 ## Agent Notes
 Keep changes minimal and explicit. Do not introduce new tooling or dependencies without documenting rationale and usage in this file.
