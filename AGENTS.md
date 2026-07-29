@@ -21,25 +21,10 @@ There are no automated tests. For manual verification:
 - Confirm behavior in both light and dark system themes if the profile uses dynamic colors.
 
 ## Commit Guidelines
-- Always check for staged files before performing a commit by using `git diff --cached`. If staged files are found, perform the commit automatically as-is using. If not, ask human teammates to manually stage files before proceeding.
 - Commits: 50 chars max, focused, imperative mood (e.g., "Add Header table sorting").
     - Commit message should summarize the changes made to staged files.
-    - Additional details should be added as a bullet point list.
-- Branches: simple, without slash parts (e.g., "add-header-table-sorting").
-
-## Pull Request Guidelines
-- Keep PRs atomic; update docs (README.md/AGENTS.md) when behavior changes.
-- Push any pending changes to upstream before creating the PR.
-- Give PRs 70-character titles and use the following template for the body; the template should be saved into a markdown file called `PR.md` at the root of the repo; recreate it if it's already present; for each section, format each title as second level headings and its contents as bullet point lists:
-    - Summary: clear description about the changes.
-    - Why: the reasoning behind the changes.
-    - Key Changes: a clear description of each important change.
-        - If applicable, include screeshots/GIFs for UI changes.
-        - If applicable, include mermaid diagrams to describe code structure, use case flow, data flows and/or logic sequences.
-    - How to Test: the steps required to test the changes.
-    - Risk / Impact: a description of the risks & impacts these changes bring to the existing product.
-    - Notes: additional notes.
-- Create PRs using `gh` command and pass it the generated `PR.md` file as the body.
+    - Add three bullet points to give more context about the commit.
+    - Keep each commit small and focused.
 
 ## Agent Notes
 Keep changes minimal and explicit. Do not introduce new tooling or dependencies without documenting rationale and usage in this file.
